@@ -1,13 +1,10 @@
-import os
-from flask import Flask
+import asyncio
+import websockets
 
-app = Flask(__name__)
+while True:
+    async def Spam():
+        async with websockets.connect("wss://devast69.devast.io:433") as websocket:
+            await websocket.send("[30,"12345678901234567890","0",-1,0,"bit.ly/devastmod",0,null,0]")
+            # await websocket.recv()
 
-@app.route('/')
-def hello():
-    return 'Hello World!'
-
-if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    asyncio.run(Spam())
